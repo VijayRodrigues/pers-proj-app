@@ -61,7 +61,7 @@ body {
     border-radius: 50%;
     position: absolute;
     left: 50px;
-    bottom: 20px;
+    bottom: 70px;
 }
 
 .circle3 {
@@ -81,7 +81,7 @@ body {
     border-radius: 50%;
     position: absolute;
     right: 50px;
-    bottom: 40px;
+    bottom: 60px;
 }
 
 .content_div{
