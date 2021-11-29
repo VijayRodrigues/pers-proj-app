@@ -12,11 +12,11 @@
         <form method="post">
             <h1>Registration Form</h1>
             <h4 style="color:rgb(245, 236, 236);"><label>NAME:</label><br>
-            <input type="text" name="one" id="name" required><br><br>
+            <input type="text" name="one" id="name" autocomplete="off" required><br><br>
             <label>USERNAME:</label><br>
-            <input type="email" name="two" id="username" required><br><br>
+            <input type="email" name="two" id="username" autocomplete="off" required><br><br>
             <label>PASSWORD:</label><br>
-            <input type="password" name="three" id="username" required><br><br></h4>
+            <input type="password" name="three" id="username" autocomplete="off" minlength="6" maxlength="8" required><br><br></h4>
             <input type="submit" value="CREATE USER" class="btn btn-primary btn-block btn-large">
         </form>
     </div>
