@@ -18,6 +18,14 @@
         text-align: center;
       }
     </style>
+    
+    <script>
+      function myFunction() {
+        alert("Your details have been submitted!!!");
+      }
+      </script>
+    
+    
 </head>
 <body>
 
@@ -36,8 +44,8 @@
 
 
     
-    <div class="container">  
-        <form id="contact" action="" method="post">
+   <div class="container">
+        <form id="contact" action="/new/contact_form" method="post" onsubmit="myFunction()">
           <h3>Contact Me</h3>
          
           <fieldset>
