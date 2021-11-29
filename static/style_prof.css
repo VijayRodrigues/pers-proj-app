@@ -4,8 +4,8 @@ body {
   }
 
  .translated{
-   position:fixed;
-  
+   position:absolute;
+  top: -240px;
    
  }
 
