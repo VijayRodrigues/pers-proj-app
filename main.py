@@ -50,10 +50,23 @@ def profile():
     if session["loginsuccess"] == True:
         return render_template("profile.html")
     
-@app.route('/new/contact_form')
+@app.route('/new/contact_form', methods=["GET", "POST"])
 def contact_form():
-        return render_template("contact_form2.html")
+    if request.method == "POST":
+        if "four" in request.form and "five" in request.form and "six" in request.form and "seven" in request.form and "eight" in request.form and "nine" in request.form:
+            fname = request.form["four"]
+            lname = request.form["five"]
+            email = request.form["six"]
+            phone = request.form["seven"]
+            website = request.form["eight"]
+            comments = request.form["nine"]
+            
+            cursor = db.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("INSERT INTO heroku_b13a1a4a3678e25.contact_db(fname, lname, email, phone, website, comments)VALUES(%s,%s,%s,%s,%s,%s)", (fname, lname, email, phone, website, comments))
+            db.connection.commit()
+    return render_template("contact_form2.html")
     
+  
 @app.route('/new/about_me')
 def about_me():
         return render_template("about_me.html")
