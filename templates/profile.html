@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,target-densitydpi=device-dpi, user-scalable=no" />
+    <title>My Profile</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='style_prof.css')}}">
+    <link rel="stylesheet"  href="{{ url_for('static', filename='social_media_btns.css')}}">
+    <link rel="stylesheet"  href="{{ url_for('static', filename='style_3.css')}}">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+    
+  
+    <style>
+      #disabled-link {
+        pointer-events: none;
+      }
+      </style>
+
+</head>
+<body>
+
+  <div class="translated">
+  <div id="google_translate_element"></div></div>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+ 
+  
+
+        
+   
+    <div class="main_div">
+
+    
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+        
+
+        <div class="topnav" id="myTopnav">
+          <span>
+            
+
+            <form action="/new/profile", methods="post">
+            <a href="{{ url_for('profile') }}" id="linktonewwindow" class="active" target="_blanks" rel="noreferrer noopener">Home</a>
+            </form>
+
+            <form action="/new/about_me", methods="post">
+            <a href="{{ url_for('about_me') }}" id="linktonewwindow" class="btn_links" target="_blanks" rel="noreferrer noopener">About</a>
+            </form>
+            
+            <form action="/new/experience", methods="post">
+            <a href="{{ url_for('experience') }}" id="linktonewwindow" class="btn_links" target="_blanks" rel="noreferrer noopener">Experience</a>
+            </form>
+
+            <form action="/new/project_page", methods="post">
+            <a href="{{ url_for('project_page') }}" id="linktonewwindow" class="btn_links" target="_blanks" rel="noreferrer noopener">Projects</a>
+            </form>
+      
+            <form action="/new/contact_form", methods="post">
+            <a href="{{ url_for('contact_form') }}" id="linktonewwindow" class="btn_links" target="_blanks" rel="noreferrer noopener">Contact</a>
+            </form>
+          </span>
+
+
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+        </div>
+          
+          <div style="padding-left:16px" class="content_div">
+            <h2 class="greet">Well, Hello there,</h2>
+            <h1 class="greet_by">i'm <mark class="font_red"> Vijay </mark> Rodrigues</h1>
+          </div>
+          
+          <script>
+          function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+              x.className += " responsive";
+            } else {
+              x.className = "topnav";
+            }
+          }
+          </script>
+        
+         
+          
+          <img class="my_img" src="{{ url_for('static', filename='my_img_new.png')}}">
+
+
+          <a href="{{ url_for('static', filename='my_resume.pdf')}}" class="buttonDownload" download="My_CV" target="_blank">Download CV</a>
+        
+
+          <div class="container" id="cont_id">
+
+            <div class="row"></div>
+    
+            <div class="row">
+                <div class="col one">
+                    <a href="#" class="btn btn-facebook icon-only" id="disabled-link"><i class="fa fa-facebook"></i></a>
+                </div>
+                <div class="col one">
+                    <a href="https://www.linkedin.com/in/vijay-rodrigues-6b6422164" target="_blank" class="btn btn-linkedin icon-only"><i class="fa fa-linkedin"></i></a>	
+                </div>
+        
+                <div class="col one">
+                    <a href="#" class="btn btn-instagram icon-only" id="disabled-link"><i class="fa fa-instagram"></i></a>	
+                </div>
+                
+                <div class="logout"></div>
+                <form action="/new/logout">
+                <button type="submit" class="login"><h3>LOGOUT</h3></button>
+                </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+ 
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='style_2.css')}}">
+</head>
+<body>
+    <div class="login">
+        <form method="post">
+            <h1>Registration Form</h1>
+            <h4 style="color:rgb(245, 236, 236);"><label>NAME:</label><br>
+            <input type="text" name="one" id="name" required><br><br>
+            <label>USERNAME:</label><br>
+            <input type="email" name="two" id="username" required><br><br>
+            <label>PASSWORD:</label><br>
+            <input type="password" name="three" id="username" required><br><br></h4>
+            <input type="submit" value="CREATE USER" class="btn btn-primary btn-block btn-large">
+        </form>
+    </div>
+    
+</body>
+</html>

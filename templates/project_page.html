@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"  href="{{ url_for('static', filename='project_page.css')}}">
+<link href='https://fonts.googleapis.com/css?family=Rubik Mono One' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Staatliches' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  .new_close{
+    position:absolute;
+    top: 100px;
+    right:120px;
+  }
+  .content{
+    border-radius: 5%;
+  }
+
+</style>
+</head>
+<body>
+
+
+
+  <div class="translated">
+    <div id="google_translate_element"></div></div>
+      <script>
+          function googleTranslateElementInit() {
+              new google.translate.TranslateElement(
+                  {pageLanguage: 'en'},
+                  'google_translate_element'
+              );
+          }
+      </script>
+      <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+<div class="main_div">
+<!-- MAIN (Center website) -->
+<div class="main">
+
+<h1>PROJECTS</h1>
+<hr>
+<h2>ALL PROJECTS</h2>
+<div class="github">
+  <a href="https://github.com/VijayRodrigues" target="_blank">
+  <img src="{{ url_for('static', filename='github_icon.png')}}"  style="width:100%" class="git_image">
+  </a>
+</div>
+
+<div class="new_close">
+  <i style="font-size:24px" class="fa" onclick="javascript:window.close()">&#xf00d;</i>
+  </div>
+<hr><br><br>
+
+<h2>DEPLOYED PROJECTS</h2>
+
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column">
+    <div class="content">
+      <a href="https://attrition-rate-pred.herokuapp.com/" target="_blank">
+      <img src="{{ url_for('static', filename='attrition_rate.jpg')}}"  style="width:100%">
+      </a>
+      <h4>Atrition Rate Predictor</h4>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+        <a href="https://bank-note-class.herokuapp.com/" target="_blank">
+        <img src="{{ url_for('static', filename='banknote_class.png')}}"  style="width:100%">
+        </a>
+      <h4>Banknote Classification</h4>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+        <a href="https://blood-dntion.herokuapp.com/" target="_blank">
+        <img src="{{ url_for('static', filename='blood_donation.jpg')}}"  style="width:100%">
+        </a>
+      <h4>Blood Donation Predictor</h4>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="column">
+    <div class="content">
+        <a href="https://kyphosis-detector.herokuapp.com/" target="_blank">
+        <img src="{{ url_for('static', filename='kyphosis_class.jpg')}}"  style="width:100%">
+        </a>
+      <h4>Kyphosis Disease detection</h4>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+        <a href="https://telephone-churn.herokuapp.com/" target="_blank">
+        <img src="{{ url_for('static', filename='telephone_churn.jpg')}}"  style="width:100%">
+        </a>
+      <h4>Telephone Customer Churn</h4>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+      <a href="https://wine-quality-class.herokuapp.com/" target="_blank">
+      <img src="{{ url_for('static', filename='wine_quality.jpg')}}" style="width:100%">
+      </a>
+      <h4>Red Wine Quality Prediction</h4>
+    </div>
+  </div>
+</div>
+  
+
+<!-- END MAIN -->
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</div>
+</body>
+</html>
